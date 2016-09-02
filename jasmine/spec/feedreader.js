@@ -53,6 +53,24 @@ $(function() {
                 expect(allFeeds[i].name.length).toBeGreaterThan(0);
             };
         });
+
+
+        /* This is a test that will add new feed in the allFeeds. */
+        it('should be able to add a feed', function() {
+            var newFeed = {
+                url: "http://test.com/rss",
+                name: "Sample Test Feed"
+            };
+            addFeed(newFeed);
+            expect(allFeeds[allFeeds.length - 1]).toBe(newFeed);
+        });
+
+        /* This is a test that will delete feed from the allFeeds. */
+        it('should be able to delete a feed', function() {
+            var noOfFeeds = allFeeds.length
+            deleteFeed(Math.round(Math.random() * allFeeds.length));
+            expect(allFeeds.length).toEqual(noOfFeeds - 1);
+        });
     });
 
 

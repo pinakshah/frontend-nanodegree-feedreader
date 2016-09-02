@@ -83,6 +83,16 @@ function init() {
      });
  }
 
+ /* TODO: Add code for add feed function */
+ function addFeed(feed) {
+    allFeeds.push(feed);
+ }
+
+/* TODO: Add code for delete a feed function */
+ function deleteFeed(index) {
+    allFeeds.splice(index,1);
+ }
+
 /* Google API: Loads the Feed Reader API and defines what function
  * to call when the Feed Reader API is done loading.
  */
