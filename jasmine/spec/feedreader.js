@@ -91,7 +91,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-        it('toggle menu on menu icon click again.', function() {
+        it('toggle menu on menu icon click', function() {
             var $menuIcon = $('.menu-icon-link');
             // Open menu when clicked
             $menuIcon.click();
@@ -116,7 +116,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         it('has a single entry element within the feed container',
-            function(done){
+            function(done) {
             // Check feed entry is defined and length greater than 0
             expect($('.feed .entry')).toBeDefined();
             expect($('.feed .entry').length).toBeGreaterThan(0);
@@ -129,11 +129,11 @@ $(function() {
         // variables to hold old and new feed content
         var $oldFeedContent, $newFeedContent;
         beforeEach(function(done) {
-            loadFeed(0, function(){
+            loadFeed(0, function() {
                 // fetch old feed content
                 $oldFeedContent = $('.feed').html();
             });
-            loadFeed(1, function(){
+            loadFeed(1, function() {
                 // fetch new feed content
                 $newFeedContent = $('.feed').html();
                 done();
@@ -143,7 +143,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        it('content actually changes', function(done){
+        it('content actually changes', function(done) {
             expect($newFeedContent).not.toEqual($oldFeedContent);
             done();
         });
