@@ -103,9 +103,7 @@ $(function() {
     /* This is a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function(){
-                done();
-            });
+            loadFeed(0, done);
         });
         /* This is a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -114,11 +112,10 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         it('has a single entry element within the feed container',
-            function(done) {
+            function() {
             // Check feed entry is defined and length greater than 0
             expect($('.feed .entry')).toBeDefined();
             expect($('.feed .entry').length).toBeGreaterThan(0);
-            done();
         });
     });
 
