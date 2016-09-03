@@ -66,7 +66,7 @@ $(function() {
         /* This is a test that will delete feed from the allFeeds. */
         it('should be able to delete a feed', function() {
             var noOfFeeds = allFeeds.length
-            deleteFeed(Math.round(Math.random() * allFeeds.length));
+            deleteFeed(Math.floor(Math.random() * allFeeds.length));
             expect(allFeeds.length).toEqual(noOfFeeds - 1);
         });
     });
