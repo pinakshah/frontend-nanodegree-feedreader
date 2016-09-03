@@ -124,23 +124,24 @@ $(function() {
         // variables to hold old and new feed content
         var $oldFeedContent, $newFeedContent;
         beforeEach(function(done) {
+            // Load first feed
             loadFeed(0, function() {
                 // fetch old feed content
                 $oldFeedContent = $('.feed').html();
-            });
-            loadFeed(1, function() {
-                // fetch new feed content
-                $newFeedContent = $('.feed').html();
-                done();
+                // Load second feed
+                loadFeed(1, function() {
+                    // fetch new feed content
+                    $newFeedContent = $('.feed').html();
+                    done();
+                });
             });
         });
         /* This is a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        it('content actually changes', function(done) {
+        it('content actually changes', function() {
             expect($newFeedContent).not.toEqual($oldFeedContent);
-            done();
         });
     });
 }());
