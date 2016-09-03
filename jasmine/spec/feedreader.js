@@ -35,7 +35,6 @@ $(function() {
             // loop through each feeds and check for URLs
             for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBeNull();
                 expect(allFeeds[i].url.length).toBeGreaterThan(0);
             };
         });
@@ -49,7 +48,6 @@ $(function() {
             // loop through each feeds and check for name
             for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBeNull();
                 expect(allFeeds[i].name.length).toBeGreaterThan(0);
             };
         });
